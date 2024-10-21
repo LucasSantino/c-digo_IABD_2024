@@ -1,0 +1,68 @@
+- Criar dicionario:        Dicionario = {"A":[1, 2, 3, 4], ...}
+- Criar um index para ele: Labels =  ["1ª linha", ...]
+
+- Transformar em DF:       dados = pd.DataFrame(Dicionario, index=Labels)  
+
+- dados.head() # Exibe as 4 primeiras linhas do DataFrame.
+
+- dados.tail() # Exibe as 4 últimas linhas do DataFrame.
+
+- dados.describe() # Informações estatísticas dos dados.
+
+- dados.info() # Descreve informações sobre os dados.
+
+- dados["D"] = dados["B"] * dados["C"] # Multiplica colunas.
+
+- dados.drop("B", axis=1) # Exclui a coluna B dessa variavel.
+- dados.drop("B", inplace=True) # Exclui da BASE DE DADOS ORIGINAL.
+
+- dados.loc["3ª linha"] # Localiza uma linha.
+- dados.loc[["3ª linha", "2ª linha"],["A","C"]] # Busca mais de uma linha e coluna no DF.
+
+- dados.iloc[0:2] # Busca pelo indice da posição.
+- dados.iloc[0:2,0:2] # busca pela linha e coluna
+
+- dados["A"] > 0 # Dados da coluna A que atendem a condição.
+
+- dados["Filtro"] = dados2 # Cria uma coluna "Filtro" no DF e colocas os dados2 nela.
+
+- dados[(dados["A"]>2)& (dados["C"]>2)] # Filtro na coluna A e C
+
+- dados.reset_index() # Zera o index que volta a ser números 0,1,2,3... 
+
+- dados.set_index("C") # Altera o index do DF para os dados da coluna C.
+
+JUNÇÃO DE DATAFRAMES:
+- join: Usado para unir DataFrames com base no índice.
+- merge: Usado para unir DataFrames com base em colunas ou índices, com maior flexibilidade e suporte para diferentes tipos de junções (como em SQL).
+- concat: Usado para concatenar DataFrames ao longo de um eixo (linha ou coluna), ideal para empilhar DataFrames verticalmente ou horizontalmente.
+
+- dados_df = pd.concat([df1,df2,df3]) # Junta os dataframes desde que todos tenham a mesma estrutura.
+
+- df_n = pd.merge(df1,df2,how='inner',on='Chaves') # Une o dataframe a partir da semelhança das chaves nas colunas.
+
+- df_1 = pd.merge(df1,df2,how='left',on='Chaves') # Une o dataframe a partir da semelhança das chaves nas colunas a esquerda.
+
+  Dataframe1 = pd.DataFrame(Dicionario_1,index=Labels_n)
+  Dataframe3 = pd.DataFrame(Dicionario_3,index=Labels_n)
+- Dataframe1.join(Dataframe3) # Une os DataFrames
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
